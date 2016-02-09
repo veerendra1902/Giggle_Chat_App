@@ -99,7 +99,7 @@ var connection = mysql.createConnection({
    host     : process.env.OPENSHIFT_MYSQL_DB_HOST || 'localhost',
    user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME || 'root',
    password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD || '1234',
-   database : 'familybook'
+   database : 'giggle'
  });
   
 connection.connect();
