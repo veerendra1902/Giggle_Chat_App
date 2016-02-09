@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="public/css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link href="public/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    	<script src="public/javascripts/bootstrap.js"></script>
+    	<script src="public/javascripts/bootstrap.min.js"></script>
+    	<script src="public/javascripts/socket.io-1.2.0.js"></script>
+    	<script src="public/javascripts/navigate.js"></script>
+    	<script src="public/javascripts/jquery-1.11.1.js"></script>
+    	<script src="public/javascripts/chat_logic.js"></script>
+    	<link rel="icon"  type="image/png" href="public/images/main_logo.png">
+		<title>Giggle</title>
+
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-3" style="border-bottom: thin solid #d3d3d3;height:68px">
+				<br>
+				<p style="margin-top:-5%; font-family:Papyrus,sans-serif;font-size:40px;letter-spacing:2px;text-align:center"><strong><span style="color:#cc364a">G</span><span style="color:blue">i</span><span style="color:green">g</span><span style="color:brown">g</span><span style="color:orange">l</span><span style="color:#420217">e</span></strong>
+			</div>
+			<div id="current_chat_friend" class="col-md-6" style="border-left: thin solid #d3d3d3;height: 63px; border-bottom: thin solid #d3d3d3;height: 68px;">
+			</div>
+			<div class="col-md-3" style=" border-bottom: thin solid #d3d3d3; height:68px">
+				<div class="row">
+					<div class="col-md-6">
+						
+					</div>
+					<div class="col-md-4">
+						<br>
+						<button type="submit" class="btn btn-info" style="width:100%" onclick="logout()"> Log Out</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="row">
+			<div id="currentUser" class="col-md-3" style="border-left:thin solid #d3d3d3;background-color:#ffffff;height:485px">
+				<div class="col-md-2" style="height:180px"></div>
+				<div id="current_user_image" class="col-md-6" style="height:180px"></div>
+				<div class="col-md-4" style="height:180px"></div>
+				<!-- <div id="current_user_image" class="col-md-1"></div> -->
+				<div id="current_user_name"></div>
+				<br><br>
+				<div style="font-family:Lato;font-size:20px;margin-left:6%">On a scale of 5, rate your happiness level.</div>
+				<br><br>
+				<div id="rates" style="margin-left:6%">
+					<label class="radio-inline">
+					 	<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> 1
+					</label>
+					<label class="radio-inline">
+					    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> 2
+					</label>
+					<label class="radio-inline">
+					    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> 3
+					</label>
+					<label class="radio-inline">
+					    <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4"> 4
+					</label>
+					<label class="radio-inline">
+					    <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5"> 5
+					</label>
+				</div>
+				<br><br>
+				<div id="happiness_level" style="font-family:Lato;font-size:20px;margin-left:6%">
+				</div>
+
+				
+			</div>
+			<div class="col-md-6" style="border-left: thin solid #d3d3d3; height: 558px">
+				<div id="chat_box" style="height:510px;overflow-y: scroll">
+					<div id="initial_message" style="font-family:Lato;font-size:20px;text-align:center;margin-top:40%;">
+						Select A Friend To Continue Chat
+					</div>
+				</div>
+          		<form id="chat_form">
+				<div id="input_box" style="border-top: thin solid #d3d3d3; display:none;">
+					<form>
+					<input type="message" class="form-control" id="message" placeholder="Type here...." required>
+					</form>
+				</div>	
+				</form>
+			</div>
+			
+			<div class="col-md-3" style="height:557px;overflow-y: scroll;">
+				<div id="TheImg" class="col-md-3">
+					<div id="image_list_start"></div>
+				</div>
+				<div id="friend_list" class="col-md-9">
+					<div id="friend_list_start"></div>
+				</div>
+
+			</div>
+			
+		</div>
+		<audio id="notification" width="0" height="0" controls="controls" style="display:none;">
+		  <source src="public/beep.mp3" type="audio/mpeg">
+		  
+		  Your browser does not support HTML5 audio.
+		</audio>
+	</body>
+</html>
