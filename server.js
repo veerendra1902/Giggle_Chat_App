@@ -64,6 +64,9 @@ app.get('/termsAndPrivacy', function(req, res){
     res.sendFile(__dirname + '/termsAndPrivacy.html');
 });
 
+app.get('/supportfailed', function(req, res){
+    res.sendFile(__dirname + '/mobileError.html');
+});
 
 app.get('/mainpage', function(req, res){
     user_session = req.session;
